@@ -51,6 +51,9 @@ describe('stub', () => {
       const countIsNine = () => {
         myObj.count = 9;
       };
+      const countIsArg = (arg) => {
+        myObj.count = arg * 2;
+      };
       const stub = sinon.stub(myObj, 'incCount');
 
       // stub.callsArg(Number)とすることで、Number番目の引数を、コールバックとして実行するようになる。
@@ -61,6 +64,13 @@ describe('stub', () => {
       myObj.incCount(countIsNine);
 
       assert(myObj.count === 9);
+
+      // stub.yields(Arg)とすることで、Argをコールバックの引数で利用できる
+      // 今回は5を指定しているためcountIsArgに5が渡される
+      stub.yields(5);
+      myObj.incCount(countIsArg);
+
+      assert(myObj.count === 10);
 
       stub.restore();
     });
