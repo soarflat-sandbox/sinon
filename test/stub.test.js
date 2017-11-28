@@ -24,14 +24,6 @@ describe('stub', () => {
     myObj.count = 0;
   });
 
-  // it('return undefined', () => {
-  //   assert(myObj.incCount(2) === 2);
-  //   assert(myObj.count === 2);
-  //   // incCountを上書きする、戻り値はundefinedになる
-  //   const stub = sinon.stub(myObj, 'incCount');
-  //   assert(myObj.incCount(3) === undefined);
-  // });
-
   describe('return value', () => {
     it('stubで上書きした戻り値を返す', () => {
       assert(myObj.incCount(2) === 2);
