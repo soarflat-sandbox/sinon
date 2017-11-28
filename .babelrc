@@ -1,0 +1,11 @@
+{
+  "presets": [
+    "env"
+  ],
+  "env": {
+    "development": {
+      "presets": [
+      ]
+    }
+  }
+}
